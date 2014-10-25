@@ -26,6 +26,8 @@ Introduce some tools in this project.
 * mocha and chai
 * istanbul for code coverage
 
+![coverage](https://github.com/akirasosa/ts-ng-weback/wiki/images/coverage.jpg)
+
 ## Setup
 
 ```
