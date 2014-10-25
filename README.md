@@ -4,8 +4,6 @@ Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos applicat
 
 ## Description
 
-Introduce some tools in this project.
-
 ### Development
 
 * Typescript 1.1.0 by gulp-typescript
@@ -44,7 +42,7 @@ Unit testing
 ./node_modules/karma/bin/karma start karma.conf.js
 ```
 
-Create production build
+Production build
 
 ```
 gulp build
@@ -54,3 +52,4 @@ gulp build
 
 * [Backbone.js Todos](http://backbonejs.org/examples/todos/)
 * [gulp-starter](https://github.com/greypants/gulp-starter)
+
