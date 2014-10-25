@@ -1,0 +1,24 @@
+{
+  "name": "02.with_gulp",
+  "version": "0.0.0",
+  "authors": [
+    "Akira Sosa <akirasosa@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.3.0"
+  },
+  "dependencies": {
+    "angular": "~1.3.0",
+    "angular-route": "~1.3.0",
+    "lodash": "~2.4.1",
+    "bootstrap-stylus": "~3.2.0"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+bower_components
+typings
+dist
+build
+coverage
+.sass-cache
+.idea
+src/tmp
