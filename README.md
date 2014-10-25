@@ -1,6 +1,6 @@
 # TypeScript + Angular + webpack Boilerplate
 
-Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it.
+Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo](http://akirasosa.github.io/ts-ng-webpack/#/).
 
 ## Description
 
