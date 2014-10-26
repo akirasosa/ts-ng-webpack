@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "TypeScript + Angular + webpack Boilerplate",
   "author": "Akira Sosa",
+  "repository": "akirasosa/ts-ng-webpack",
   "keywords": [
     "typescript",
     "angularjs",

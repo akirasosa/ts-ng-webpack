@@ -2,6 +2,8 @@
 
 Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo](http://akirasosa.github.io/ts-ng-webpack/#/).
 
+* [![Build Status][travis-image]][travis-url]
+
 ## Description
 
 ### Development
@@ -53,3 +55,6 @@ gulp build
 * [Backbone.js Todos](http://backbonejs.org/examples/todos/)
 * [gulp-starter](https://github.com/greypants/gulp-starter)
 
+
+[travis-url]: https://travis-ci.org/akirasosa/ts-ng-webpack
+[travis-image]: https://travis-ci.org/akirasosa/ts-ng-webpack.svg
