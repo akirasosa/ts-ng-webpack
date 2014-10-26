@@ -9,7 +9,8 @@ node_js:
   - "0.10"
 
 before_script:
-  - npm install -g bower gulp
+  - npm install -g bower gulp tsd
   - bower install
+  - tsd reinstall
   - gulp template typescript coffee
 
