@@ -1,7 +1,9 @@
+#sinon = require("sinon")
+assert = require "power-assert"
+
 todoAppModule = require './todo-module'
 
 describe 'TodoCtrl', ->
-
   beforeEach ->
     angular.mock.module todoAppModule.name
     angular.mock.inject ($injector) ->
@@ -12,9 +14,9 @@ describe 'TodoCtrl', ->
       @controller.newTodoTitle = "test title"
       @controller.addTodo()
     it 'should add todo', ->
-      expect(@controller.todos[0]).to.be
+      assert.ok @controller.todos[0]
     it 'should clear new title', ->
-      expect(@controller.newTodoTitle).to.be.empty
+      assert @controller.newTodoTitle is ""
 
   describe '#removeTodo', ->
     it 'should remove todo', ->
@@ -22,7 +24,7 @@ describe 'TodoCtrl', ->
         title: "test todo"
       ]
       @controller.removeTodo(@controller.todos[0])
-      expect(@controller.todos).to.be.empty
+      assert @controller.todos.length is 0
 
   describe '#clearCompleted', ->
     it 'should clear completed', ->
@@ -32,5 +34,5 @@ describe 'TodoCtrl', ->
         done: false
       ]
       @controller.clearCompleted()
-      expect(@controller.todos[0].done).to.be.false
-      expect(@controller.todos.length).to.equal 1
+      assert @controller.todos[0].done is false
+      assert @controller.todos.length is 1

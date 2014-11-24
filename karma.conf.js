@@ -4,7 +4,7 @@ var webpackConfig = require("./webpack.config.js");
 module.exports = function(config) {
   config.set({
     basePath: '',
-    frameworks: ["mocha", "chai"],
+    frameworks: ["mocha"],
     files: [
       "bower_components/angular/angular.js",
       "bower_components/angular-mocks/angular-mocks.js",
@@ -48,7 +48,6 @@ module.exports = function(config) {
     singleRun: false,
     plugins: [
       "karma-mocha",
-      "karma-chai",
       "karma-webpack",
       "karma-coverage",
       "karma-chrome-launcher",
