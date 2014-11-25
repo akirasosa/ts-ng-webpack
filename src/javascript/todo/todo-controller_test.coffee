@@ -1,6 +1,5 @@
-#sinon = require("sinon")
+require '../test-helper'
 assert = require "power-assert"
-
 todoAppModule = require './todo-module'
 
 describe 'TodoCtrl', ->
