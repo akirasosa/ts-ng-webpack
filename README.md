@@ -23,7 +23,9 @@ Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos applicat
 ### Testing
 
 * karma
-* mocha and chai
+* mocha
+* power-assert
+* sinon
 * istanbul for code coverage
 
 ![coverage](https://github.com/akirasosa/ts-ng-weback/wiki/images/coverage.jpg)
