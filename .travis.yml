@@ -14,3 +14,6 @@ before_script:
   - tsd reinstall
   - gulp template typescript coffee
 
+
+after_script:
+  - scripts/push-to-ghpages.sh
