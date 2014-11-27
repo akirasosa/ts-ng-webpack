@@ -1,3 +1,3 @@
 var gulp = require("gulp");
 
-gulp.task("build", ['clean', 'template', 'webpack:build']);
+gulp.task("build", ['template', 'webpack:build']);
