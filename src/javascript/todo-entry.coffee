@@ -12,3 +12,6 @@ angular.module 'todo-entry', requires
   .config ['$routeProvider', ($routeProvider) ->
     $routeProvider.otherwise redirectTo: "/"
   ]
+  .config ['$locationProvider', ($locationProvider) ->
+    $locationProvider.html5Mode(true)
+  ]
