@@ -1,6 +1,6 @@
 # TypeScript + Angular + webpack Boilerplate
 
-Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo](demo-url).
+Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo][demo-url].
 
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][gemnasium-image]][gemnasium-url]
