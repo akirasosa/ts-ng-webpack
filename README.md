@@ -2,7 +2,8 @@
 
 Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo](http://akirasosa.github.io/ts-ng-webpack/#/).
 
-* [![Build Status][travis-image]][travis-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][gemnasium-image]][gemnasium-url]
 
 ## Description
 
@@ -60,3 +61,5 @@ gulp build
 
 [travis-url]: https://travis-ci.org/akirasosa/ts-ng-webpack
 [travis-image]: https://travis-ci.org/akirasosa/ts-ng-webpack.svg
+[gemnasium-url]: https://gemnasium.com/akirasosa/ts-ng-webpack
+[gemnasium-image]: https://gemnasium.com/akirasosa/ts-ng-webpack.svg
