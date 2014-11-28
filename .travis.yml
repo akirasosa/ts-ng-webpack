@@ -16,5 +16,5 @@ script:
 env:
   global:
   - GH_REF: github.com/akirasosa/ts-ng-webpack
-  # GH_THOKEN
-  - secure: VK3MUBJ8aK9mv83oNw/gFGLcJt4n8AejoBByDO4B/qC+E53W9QLZ4w97eRIhO5sygTbhLvEuLeXMuUkZXYIBFpWQxLREdet4Llfp8VwVw16R4+xqHqB7h1mMH/ij48NiVOTKOcN+NsnbV/6jWYMyjl+/17zZsO15ckmuQJiYMYY=
+  # GH_TOKEN
+  - secure: MiJVCoGjNtFkvvmtUotqQ1aXrA1IaL9dy6T9aUwIOruoZ+cRz3hZUAUxH6MCHsF4Nh5cI/OXXZOb3ltPFQHANuJzIoy+DonkiHSZq6jRHcz50PXtdS0xnTYb8zeQOk/ORvpgz+dBqBgmjrA1oeRqhesqG2vN5bczRvNisrJ2tJE=
