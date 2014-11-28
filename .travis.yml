@@ -1,19 +1,20 @@
 language: node_js
-
 cache:
   directories:
-    - node_modules
-    - bower_components
-
+  - node_modules
+  - bower_components
 node_js:
-  - "0.10"
-
+- '0.10'
 before_script:
-  - npm install -g bower gulp tsd
-  - bower install
-  - tsd reinstall
-  - gulp template typescript coffee
-
-
-after_script:
-  - scripts/push-to-ghpages.sh
+- npm install -g bower gulp tsd
+- bower install
+- tsd reinstall
+- gulp template typescript coffee
+script:
+- npm test
+- scripts/push-to-ghpages.sh
+env:
+  global:
+  - GH_REF: github.com/akirasosa/ts-ng-webpack
+  # GH_THOKEN
+  - secure: VK3MUBJ8aK9mv83oNw/gFGLcJt4n8AejoBByDO4B/qC+E53W9QLZ4w97eRIhO5sygTbhLvEuLeXMuUkZXYIBFpWQxLREdet4Llfp8VwVw16R4+xqHqB7h1mMH/ij48NiVOTKOcN+NsnbV/6jWYMyjl+/17zZsO15ckmuQJiYMYY=
