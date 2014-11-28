@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 
-gulp.task('watch', ['template', 'typescript', 'coffee', 'stylus', 'images'], function() {
+gulp.task('watch', ['compile'], function() {
   gulp.watch('src/javascript/**/*.jade', ['template']);
   gulp.watch('src/javascript/**/*.ts', ['typescript', 'tslint']);
   gulp.watch('src/javascript/**/*.coffee', ['coffee']);
