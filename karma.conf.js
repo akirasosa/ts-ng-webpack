@@ -6,13 +6,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ["mocha"],
     files: [
-      "bower_components/angular/angular.js",
-      "bower_components/angular-mocks/angular-mocks.js",
-      "bower_components/angular-route/angular-route.js",
-      'build/javascript/**/*_test.js',
-    ],
-    exclude: [
-      'build/javascript/todo-entry.js'
+      'build/javascript/**/*_test.js'
     ],
     preprocessors: {
       'build/javascript/**/*_test.js': ['webpack']
@@ -29,7 +23,12 @@ module.exports = function(config) {
         postLoaders: [
           {
             test: /\.js$/,
-            exclude: /(test|node_modules|bower_components)\//,
+            exclude: [
+              /node_modules\//,
+              /bower_components\//,
+              /_test.js$/,
+              /test-helper.js$/
+            ],
             loader: 'istanbul-instrumenter'
           }
         ]
