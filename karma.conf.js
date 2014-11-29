@@ -10,7 +10,6 @@ module.exports = function(config) {
       "bower_components/angular-mocks/angular-mocks.js",
       "bower_components/angular-route/angular-route.js",
       'build/javascript/**/*_test.js',
-      'build/javascript/templates.js'
     ],
     exclude: [
       'build/javascript/todo-entry.js'
