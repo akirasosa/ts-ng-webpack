@@ -1,5 +1,5 @@
-/// <reference path="../../../typings/angularjs/angular.d.ts"/>
-/// <reference path="../../../typings/lodash/lodash.d.ts"/>
+/// <reference path="../../../../typings/angularjs/angular.d.ts"/>
+/// <reference path="../../../../typings/lodash/lodash.d.ts"/>
 
 import _  = require("lodash");
 

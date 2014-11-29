@@ -2,7 +2,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
-  entry: "./build/javascript/todo-entry.js",
+  entry: "./build/javascript/app1-entry.js",
   output: {
     path: path.join(__dirname, "dist"),
     publicPath: 'dist/',
@@ -17,7 +17,7 @@ module.exports = {
       { test: /\.ttf$/, loader: "file-loader" },
       { test: /\.eot$/, loader: "file-loader" },
       { test: /\.svg$/, loader: "file-loader" },
-      { test: /\.html$/, loader: "ng-cache?prefix=[dir]/[dir]" }
+      { test: /\.html$/, loader: "ng-cache?prefix=[dir]" }
     ]
   },
   resolve: {

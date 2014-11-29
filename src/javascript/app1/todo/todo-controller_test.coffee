@@ -1,4 +1,4 @@
-require '../test-helper'
+require '../../test-helper'
 assert = require "power-assert"
 todoAppModule = require './todo-module'
 

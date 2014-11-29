@@ -1,13 +1,13 @@
 require '../css/style.css'
 require 'angular'
 require 'angular-route'
-todoAppModule = require './todo/todo-module'
+todoAppModule = require './app1/todo/todo-module'
 
 requires = [
   todoAppModule.name
 ]
 
-angular.module 'todo-entry', requires
+angular.module 'app1-entry', requires
   .config ['$routeProvider', ($routeProvider) ->
     $routeProvider.otherwise redirectTo: "/"
   ]

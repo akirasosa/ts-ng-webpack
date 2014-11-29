@@ -1,6 +1,6 @@
-/// <reference path="../../../typings/angularjs/angular.d.ts" />
-/// <reference path="../../../typings/angularjs/angular-route.d.ts" />
-/// <reference path="../../../typings/node/node.d.ts" />
+/// <reference path="../../../../typings/node/node.d.ts" />
+/// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../../../typings/angularjs/angular-route.d.ts" />
 
 import TodoCtrl = require("./todo-controller");
 require("./index.html");
@@ -13,7 +13,7 @@ var mod: ng.IModule = angular.module("todo-app", requires)
         return $routeProvider.when("/", {
             controller: "TodoCtrl",
             controllerAs: "todoCtrl",
-            templateUrl: "javascript/todo/index.html"
+            templateUrl: "todo/index.html"
         });
     }])
     .controller("TodoCtrl", TodoCtrl);
