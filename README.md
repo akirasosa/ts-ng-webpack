@@ -9,7 +9,7 @@ Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos applicat
 
 ### Development
 
-* Typescript 1.1.0 by gulp-typescript
+* Typescript 1.3
 * Angular 1.3
 * Stylus
 * Bootstrap
@@ -27,7 +27,7 @@ Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos applicat
 * mocha
 * power-assert
 * sinon
-* istanbul for code coverage
+* istanbul
 
 ![coverage](https://github.com/akirasosa/ts-ng-weback/wiki/images/coverage.jpg)
 
