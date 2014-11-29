@@ -9,7 +9,7 @@ before_script:
 - npm install -g bower gulp tsd
 - bower install
 - tsd reinstall
-- gulp template typescript coffee
+- gulp compile
 script:
 - npm test
 - scripts/push-to-ghpages.sh
