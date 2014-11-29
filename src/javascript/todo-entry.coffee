@@ -1,7 +1,6 @@
 require '../css/style.css'
 require 'angular'
 require 'angular-route'
-require './templates'
 todoAppModule = require './todo/todo-module'
 
 requires = [
