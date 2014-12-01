@@ -1,4 +1,11 @@
 var gulp = require("gulp");
 
-gulp.task('compile', ['jade', 'typescript', 'coffee', 'stylus', 'images']);
+gulp.task('compile', [
+  'jade',
+  'typescript',
+  'coffee',
+  'javascript',
+  'stylus',
+  'images'
+]);
 

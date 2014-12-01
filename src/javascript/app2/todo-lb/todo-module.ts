@@ -3,12 +3,16 @@
 /// <reference path="../../../../typings/angularjs/angular-route.d.ts" />
 
 import TodoCtrl = require("./todo-controller");
+import TodoResource = require("./todo-resource");
+
+require("../../components/loopback/lb-services");
 require("./index.html");
 
 var requires: string[] = [
-    "ngRoute"
+    "ngRoute",
+    "lbServices"
 ];
-var mod: ng.IModule = angular.module("app2.odo-lb-app", requires)
+var mod: ng.IModule = angular.module("app2.todo-lb-app", requires)
     .config(["$routeProvider", ($routeProvider: ng.route.IRouteProvider): ng.route.IRouteProvider => {
         return $routeProvider.when("/", {
             controller: "TodoCtrl",
@@ -16,6 +20,6 @@ var mod: ng.IModule = angular.module("app2.odo-lb-app", requires)
             templateUrl: "todo-lb/index.html"
         });
     }])
-    .controller("TodoCtrl", TodoCtrl);
-
+    .controller("TodoCtrl", TodoCtrl)
+    .service("TodoResource", TodoResource);
 export = mod;

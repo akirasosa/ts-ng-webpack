@@ -4,27 +4,50 @@
 import _  = require("lodash");
 
 class TodoCtrl {
-    public todos: ITodo[];
-    public newTodoTitle: string;
+    private todoResource: ITodoResource;
+    public todos: ITodo[] = [];
+    public newTodo: ITodo;
+    public todoForm: ng.IFormController;
 
-    constructor() {
-        this.todos = [];
+    constructor(todoResource: ITodoResource) {
+        this.todoResource = todoResource;
+        this.init();
+    }
+
+    private init(): void {
+        this.getTodos();
+    }
+
+    public getTodos():void {
+        this.todoResource.getTodos().then((todos: ITodo[]) => {
+           this.todos = todos;
+        });
+
     }
 
     public addTodo(): void {
-        this.todos.push({
-            title: this.newTodoTitle,
-            done: false
+        this.todoResource.addTodo(this.newTodo).then(() => {
+            this.newTodo.title = "";
+            this.todoForm.$setPristine();
+            this.getTodos();
         });
-        this.newTodoTitle = "";
     }
 
     public removeTodo(todo: ITodo): void {
-        this.todos.splice(this.todos.indexOf(todo), 1);
+        this.todoResource.removeTodo(todo).then(() => {
+            this.getTodos();
+        })
     }
 
     public clearCompleted(): void {
-        this.todos = _.reject(this.todos, "done");
+        var completed: ITodo[] = _.filter(this.todos, "done");
+        if (_.isEmpty(completed)) return;
+        this.todoResource.clearCompleted(completed).then(() => {
+            this.getTodos();
+        });
     }
 }
+TodoCtrl.$inject = [
+    "TodoResource"
+]
 export = TodoCtrl;
