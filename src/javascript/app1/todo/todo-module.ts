@@ -3,7 +3,10 @@
 /// <reference path="../../../../typings/angularjs/angular-route.d.ts" />
 
 import TodoCtrl = require("./todo-controller");
+
+/* tslint:disable */
 require("./index.html");
+/* tslint:enable */
 
 var requires: string[] = [
     "ngRoute"

@@ -18,7 +18,7 @@ class TodoCtrl {
         this.getTodos();
     }
 
-    public getTodos():void {
+    public getTodos(): void {
         this.todoResource.getTodos().then((todos: ITodo[]) => {
            this.todos = todos;
         });
@@ -36,12 +36,12 @@ class TodoCtrl {
     public removeTodo(todo: ITodo): void {
         this.todoResource.removeTodo(todo).then(() => {
             this.getTodos();
-        })
+        });
     }
 
     public clearCompleted(): void {
         var completed: ITodo[] = _.filter(this.todos, "done");
-        if (_.isEmpty(completed)) return;
+        if (_.isEmpty(completed)) { return; }
         this.todoResource.clearCompleted(completed).then(() => {
             this.getTodos();
         });
@@ -49,5 +49,5 @@ class TodoCtrl {
 }
 TodoCtrl.$inject = [
     "TodoResource"
-]
+];
 export = TodoCtrl;

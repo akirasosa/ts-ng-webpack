@@ -34,7 +34,7 @@ class TodoResource implements ITodoResource {
             .$promise;
     }
 }
-TodoResource.$inject =[
+TodoResource.$inject = [
     "Todo"
 ];
 export = TodoResource;

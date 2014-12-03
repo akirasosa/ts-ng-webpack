@@ -5,8 +5,11 @@
 import TodoCtrl = require("./todo-controller");
 import TodoResource = require("./todo-resource");
 
+/* tslint:disable */
+require("angular-resource");
 require("../../components/loopback/lb-services");
 require("./index.html");
+/* tslint:enable */
 
 var requires: string[] = [
     "ngRoute",
