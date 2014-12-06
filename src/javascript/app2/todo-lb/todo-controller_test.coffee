@@ -36,6 +36,12 @@ describe 'TodoCtrl', ->
     self.sinon.stub(self.todoResource, 'removeTodo')
       .returns d.promise
 
+  fakeClearCompleted = ->
+    d = self.$q.defer()
+    d.resolve()
+    self.sinon.stub(self.todoResource, 'clearCompleted')
+      .returns d.promise
+
   describe '#initialization', ->
     it 'should fetch todos', ->
       fakeGetTodos()
@@ -55,17 +61,17 @@ describe 'TodoCtrl', ->
     it 'should add todo', ->
       @ctrl.addTodo()
       @$rootScope.$digest()
-      assert.ok @addTodo.calledWith @ctrl.newTodo
+      assert @addTodo.calledWith(@ctrl.newTodo) is true
     it 'should reset form', ->
       @ctrl.addTodo()
       @$rootScope.$digest()
       assert @ctrl.newTodo.title is ""
-      assert.ok @$setPristine.called
+      assert @$setPristine.called is true
     it 'should reload todo', ->
       spy = @sinon.stub(@ctrl, 'getTodos')
       @ctrl.addTodo()
       @$rootScope.$digest()
-      assert.ok spy.called
+      assert spy.called is true
 
   describe '#removeTodo', ->
     beforeEach ->
@@ -75,21 +81,32 @@ describe 'TodoCtrl', ->
     it 'should remove todo', ->
       @ctrl.removeTodo title: "remove me"
       @$rootScope.$digest()
-      assert.ok @removeTodo.calledWith title: "remove me"
+      assert @removeTodo.calledWith(title: "remove me") is true
     it 'should reload todo', ->
       spy = @sinon.stub(@ctrl, 'getTodos')
       @ctrl.removeTodo {}
       @$rootScope.$digest()
-      assert.ok spy.called
+      assert spy.called is true
 
-  #describe '#clearCompleted', ->
-    #it 'should clear completed', ->
-      #@controller.todos = [
-        #done: true
-      #,
-        #done: false
-      #]
-      #@controller.clearCompleted()
-      #assert @controller.todos[0].done is false
-      #assert @controller.todos.length is 1
+  describe '#clearCompleted', ->
+    beforeEach ->
+      fakeGetTodos()
+      @clearCompleted = fakeClearCompleted()
+      @ctrl = createController()
+    describe 'when there is no completed todos', ->
+      it 'should do nothing', ->
+        @ctrl.clearCompleted()
+        @$rootScope.$digest()
+        assert @clearCompleted.called is false
+    describe 'when there are completed todos', ->
+      beforeEach ->
+        @ctrl.todos = [{done: true}, {done: false}]
+      it 'should clear completed', ->
+        @ctrl.clearCompleted()
+        assert @clearCompleted.calledWith([done: true]) is true
+      it 'should reload todo', ->
+        spy = @sinon.stub(@ctrl, 'getTodos')
+        @ctrl.clearCompleted()
+        @$rootScope.$digest()
+        assert spy.called is true
 
