@@ -12,7 +12,6 @@ myDevConfig.debug = true;
 var devCompiler = webpack(myDevConfig);
 
 gulp.task("webpack:build-dev", function(callback) {
-  // run webpack
   devCompiler.run(function(err, stats) {
     if(err) throw new gutil.PluginError("webpack:build-dev", err);
     gutil.log("[webpack:build-dev]", stats.toString({

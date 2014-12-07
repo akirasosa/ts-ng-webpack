@@ -2,10 +2,12 @@ var gulp = require("gulp");
 var gutil = require("gulp-util");
 var webpack = require("webpack");
 var webpackConfig = require("../../../webpack.config");
+var config = require("../../../config");
 
 gulp.task("webpack:build", function(callback) {
   // modify some webpack config options
   var myConfig = Object.create(webpackConfig);
+  myConfig.output.publicPath = config.production.publicPath;
   myConfig.plugins = myConfig.plugins.concat(
     new webpack.DefinePlugin({
       "process.env": {

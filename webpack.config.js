@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+var config = require("./config");
 
 module.exports = {
   entry: {
@@ -8,8 +9,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "dist"),
-    publicPath: 'http://localhost:8080/dist/',
-    //publicPath: 'dist/',
+    publicPath: config.dev.publicPath,
     filename: "[name].bundle.js"
   },
   module: {

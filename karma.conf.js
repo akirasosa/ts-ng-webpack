@@ -27,7 +27,8 @@ module.exports = function(config) {
               /node_modules\//,
               /bower_components\//,
               /_test.js$/,
-              /test-helper.js$/
+              /test-helper.js$/,
+              /lb-services.js$/ // generated file
             ],
             loader: 'istanbul-instrumenter'
           }
