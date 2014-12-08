@@ -1,6 +1,8 @@
 # TypeScript + Angular + webpack Boilerplate
 
-Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try [demo][demo-url].
+Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try demo.
+* [demo][demo-url].
+* [demo-loopback-backed][demo-loopback-backed-url].
 
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][gemnasium-image]][gemnasium-url]
@@ -59,6 +61,7 @@ gulp build
 * [gulp-starter](https://github.com/greypants/gulp-starter)
 
 [demo-url]: http://ts-ng-webpack.5ik.biz/
+[demo-loopback-backed-url]: http://arcane-garden-2362.herokuapp.com/
 [travis-url]: https://travis-ci.org/akirasosa/ts-ng-webpack
 [travis-image]: https://travis-ci.org/akirasosa/ts-ng-webpack.svg
 [gemnasium-url]: https://gemnasium.com/akirasosa/ts-ng-webpack
