@@ -2,11 +2,11 @@ require '../../test-helper'
 assert = require "power-assert"
 todoAppModule = require './todo-module'
 
-describe 'TodoResource', ->
+describe 'TodoService', ->
   beforeEach ->
     angular.mock.module todoAppModule.name
     angular.mock.inject ($injector) ->
-      @todoResource = $injector.get('TodoResource')
+      @todoResource = $injector.get('TodoService')
       @$rootScope = $injector.get('$rootScope')
       @$httpBackend = $injector.get('$httpBackend')
 

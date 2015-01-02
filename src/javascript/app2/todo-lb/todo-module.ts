@@ -3,17 +3,16 @@
 /// <reference path="../../../../typings/angularjs/angular-route.d.ts" />
 
 import TodoCtrl = require("./todo-controller");
-import TodoResource = require("./todo-resource");
+import TodoService = require("./todo-service");
 
 /* tslint:disable */
 require("angular-resource");
-require("../../components/loopback/lb-services");
 require("./index.html");
 /* tslint:enable */
 
 var requires: string[] = [
     "ngRoute",
-    "lbServices"
+    "ngResource"
 ];
 var mod: ng.IModule = angular.module("app2.todo-lb-app", requires)
     .config(["$routeProvider", ($routeProvider: ng.route.IRouteProvider): ng.route.IRouteProvider => {
@@ -24,5 +23,6 @@ var mod: ng.IModule = angular.module("app2.todo-lb-app", requires)
         });
     }])
     .controller("TodoCtrl", TodoCtrl)
-    .service("TodoResource", TodoResource);
+    .service("TodoService", TodoService);
 export = mod;
+

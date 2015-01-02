@@ -9,7 +9,7 @@ describe 'TodoCtrl', ->
     self = @
     angular.mock.module todoAppModule.name
     angular.mock.inject ($injector) ->
-      @todoResource = $injector.get('TodoResource')
+      @todoResource = $injector.get('TodoService')
       @$controller = $injector.get('$controller')
       @$q = $injector.get('$q')
       @$rootScope = $injector.get('$rootScope')

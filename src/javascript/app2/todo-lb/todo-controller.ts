@@ -4,13 +4,14 @@
 import _  = require("lodash");
 
 class TodoCtrl {
-    private todoResource: ITodoResource;
+
     public todos: ITodo[] = [];
     public newTodo: ITodo;
     public todoForm: ng.IFormController;
+    private todoService: ITodoService;
 
-    constructor(todoResource: ITodoResource) {
-        this.todoResource = todoResource;
+    constructor(todoService: ITodoService) {
+        this.todoService = todoService;
         this.init();
     }
 
@@ -19,35 +20,35 @@ class TodoCtrl {
     }
 
     public getTodos(): void {
-        this.todoResource.getTodos().then((todos: ITodo[]) => {
+        this.todoService.getTodos().content.then((todos: ITodo[]) => {
            this.todos = todos;
         });
 
     }
 
-    public addTodo(): void {
-        this.todoResource.addTodo(this.newTodo).then(() => {
-            this.newTodo.title = "";
-            this.todoForm.$setPristine();
-            this.getTodos();
-        });
-    }
-
-    public removeTodo(todo: ITodo): void {
-        this.todoResource.removeTodo(todo).then(() => {
-            this.getTodos();
-        });
-    }
-
-    public clearCompleted(): void {
-        var completed: ITodo[] = _.filter(this.todos, "done");
-        if (_.isEmpty(completed)) { return; }
-        this.todoResource.clearCompleted(completed).then(() => {
-            this.getTodos();
-        });
-    }
+    //public addTodo(): void {
+    //    this.todoResource.addTodo(this.newTodo).then(() => {
+    //        this.newTodo.title = "";
+    //        this.todoForm.$setPristine();
+    //        this.getTodos();
+    //    });
+    //}
+    //
+    //public removeTodo(todo: ITodo): void {
+    //    this.todoResource.removeTodo(todo).then(() => {
+    //        this.getTodos();
+    //    });
+    //}
+    //
+    //public clearCompleted(): void {
+    //    var completed: ITodo[] = _.filter(this.todos, "done");
+    //    if (_.isEmpty(completed)) { return; }
+    //    this.todoResource.clearCompleted(completed).then(() => {
+    //        this.getTodos();
+    //    });
+    //}
 }
 TodoCtrl.$inject = [
-    "TodoResource"
+    "TodoService"
 ];
 export = TodoCtrl;
