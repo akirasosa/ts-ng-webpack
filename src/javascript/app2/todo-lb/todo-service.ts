@@ -24,7 +24,7 @@ class TodoService implements ITodoService {
         });
     }
 
-    public getTodos(): Page<ITodo> {
+    public getTodos(): IPage<ITodo> {
         var totalItems :number = 0;
         var itemsPerPage :number = 20;
         var todos: ng.IPromise<ITodo[]>  = this.resource().query({}, (data, header) => {
