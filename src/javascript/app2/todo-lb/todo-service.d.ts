@@ -1,5 +1,5 @@
 interface ITodoService {
 
-    getTodos(page: number = 0): IPage<ITodo>;
+    getTodos(page: number, size: number): ng.IPromise<IPage<ITodo>>;
 
 }

@@ -1,5 +1,5 @@
 interface IPage<T> {
-    content: ng.IPromise<T[]>;
+    content: T[];
     totalItems: number;
     itemsPerPage: number;
 }

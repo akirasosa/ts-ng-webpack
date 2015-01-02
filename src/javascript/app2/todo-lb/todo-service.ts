@@ -1,5 +1,3 @@
-///<reference path="todo-resource.d.ts"/>
-
 class TodoService implements ITodoService {
 
     private $resource: ng.resource.IResourceService;
@@ -12,9 +10,9 @@ class TodoService implements ITodoService {
         var baseApi: string = "/api/todos";
         var params: any = {id: "@id"};
         var queryAction: ng.resource.IActionDescriptor = {
-            method: 'GET',
+            method: "GET",
             isArray: true,
-            transformResponse: (data) => {
+            transformResponse: (data: string) => {
                 return angular.fromJson(data).content;
             }
         };
@@ -24,19 +22,21 @@ class TodoService implements ITodoService {
         });
     }
 
-    public getTodos(): IPage<ITodo> {
-        var totalItems :number = 0;
-        var itemsPerPage :number = 20;
-        var todos: ng.IPromise<ITodo[]>  = this.resource().query({}, (data, header) => {
+    public getTodos(page: number, size: number): ng.IPromise<IPage<ITodo>> {
+        var totalItems: number = undefined;
+        var itemsPerPage: number = undefined;
+
+        return this.resource().query({page: page, size: size}, (data, header) => {
             totalItems = header("X-Total-Items");
             itemsPerPage = header("X-Items-Per-Page");
-        }).$promise;
+        }).$promise.then((todos: ITodo[]) => {
+            return {
+                content: todos,
+                totalItems: totalItems,
+                itemsPerPage: itemsPerPage
+            }
+        });
 
-        return {
-            content: todos,
-            totalItems: totalItems,
-            itemsPerPage: itemsPerPage
-        };
     }
 
 }
