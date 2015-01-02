@@ -28,6 +28,14 @@ class TodoCtrl {
         });
     }
 
+    public addTodo(): void {
+        this.todoService.addTodo(this.newTodo).then(() => {
+            this.newTodo = <ITodo>{};
+            this.todoForm.$setPristine();
+            this.getTodos();
+        });
+    }
+
 }
 
 TodoCtrl.$inject = [

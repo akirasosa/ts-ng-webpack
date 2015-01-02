@@ -34,9 +34,12 @@ class TodoService implements ITodoService {
                 content: todos,
                 totalItems: totalItems,
                 itemsPerPage: itemsPerPage
-            }
+            };
         });
+    }
 
+    public addTodo(todo: ITodo): ng.IPromise<ITodo> {
+        return this.resource().save(todo).$promise;
     }
 
 }
