@@ -42,6 +42,12 @@ class TodoCtrl {
         });
     }
 
+    public clearCompleted(): void {
+        this.todoService.removeCompleted(this.todos).then(() => {
+            this.getTodos();
+        });
+    }
+
 
 }
 

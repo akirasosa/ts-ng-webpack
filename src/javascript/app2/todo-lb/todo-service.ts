@@ -1,25 +1,10 @@
-class TodoService implements ITodoService {
+import _  = require("lodash");
 
+class TodoService implements ITodoService {
     private $resource: ng.resource.IResourceService;
 
     constructor($resource: ng.resource.IResourceService) {
         this.$resource = $resource;
-    }
-
-    private resource(): ITodoResource {
-        var baseApi: string = "/api/todos/:id";
-        var params: any = {id: "@id"};
-        var queryAction: ng.resource.IActionDescriptor = {
-            method: "GET",
-            isArray: true,
-            transformResponse: (data: string) => {
-                return angular.fromJson(data).content;
-            }
-        };
-
-        return <ITodoResource>this.$resource(baseApi, params, {
-            query: queryAction
-        });
     }
 
     public getTodos(page: number, size: number): ng.IPromise<IPage<ITodo>> {
@@ -42,9 +27,34 @@ class TodoService implements ITodoService {
         return this.resource().save(todo).$promise;
     }
 
-    public removeTodo(todo: ITodo):ng.IPromise<ITodo> {
+    public removeTodo(todo: ITodo): ng.IPromise<ITodo> {
         return this.resource().delete({id: todo.id}).$promise;
     }
+
+    public removeCompleted(todos: ITodo[]): ng.IPromise<any> {
+        var completedIds: number[] = _.chain(todos)
+            .filter("done")
+            .pluck<number>("id")
+            .value();
+        return this.resource().delete({ids: completedIds}).$promise;
+    }
+
+    private resource(): ITodoResource {
+        var baseApi: string = "/api/todos/:id";
+        var params: any = {id: "@id"};
+        var queryAction: ng.resource.IActionDescriptor = {
+            method: "GET",
+            isArray: true,
+            transformResponse: (data: string) => {
+                return angular.fromJson(data).content;
+            }
+        };
+
+        return <ITodoResource> this.$resource(baseApi, params, {
+            query: queryAction
+        });
+    }
+
 
 }
 
