@@ -7,7 +7,7 @@ class TodoService implements ITodoService {
     }
 
     private resource(): ITodoResource {
-        var baseApi: string = "/api/todos";
+        var baseApi: string = "/api/todos/:id";
         var params: any = {id: "@id"};
         var queryAction: ng.resource.IActionDescriptor = {
             method: "GET",
@@ -40,6 +40,10 @@ class TodoService implements ITodoService {
 
     public addTodo(todo: ITodo): ng.IPromise<ITodo> {
         return this.resource().save(todo).$promise;
+    }
+
+    public removeTodo(todo: ITodo):ng.IPromise<ITodo> {
+        return this.resource().delete({id: todo.id}).$promise;
     }
 
 }

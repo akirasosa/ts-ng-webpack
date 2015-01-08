@@ -36,6 +36,13 @@ class TodoCtrl {
         });
     }
 
+    public removeTodo(todo: ITodo): void {
+        this.todoService.removeTodo(todo).then(() => {
+            this.getTodos();
+        });
+    }
+
+
 }
 
 TodoCtrl.$inject = [
