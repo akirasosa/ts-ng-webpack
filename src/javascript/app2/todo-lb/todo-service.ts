@@ -1,6 +1,7 @@
 import _  = require("lodash");
 
 class TodoService implements ITodoService {
+
     private $resource: ng.resource.IResourceService;
 
     constructor($resource: ng.resource.IResourceService) {
@@ -31,7 +32,7 @@ class TodoService implements ITodoService {
         return this.resource().delete({id: todo.id}).$promise;
     }
 
-    public removeCompleted(todos: ITodo[]): ng.IPromise<any> {
+    public clearCompleted(todos: ITodo[]): ng.IPromise<ITodo> {
         var completedIds: number[] = _.chain(todos)
             .filter("done")
             .pluck<number>("id")
@@ -54,7 +55,6 @@ class TodoService implements ITodoService {
             query: queryAction
         });
     }
-
 
 }
 

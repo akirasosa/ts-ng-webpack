@@ -43,7 +43,7 @@ class TodoCtrl {
     }
 
     public clearCompleted(): void {
-        this.todoService.removeCompleted(this.todos).then(() => {
+        this.todoService.clearCompleted(this.todos).then(() => {
             this.getTodos();
         });
     }
