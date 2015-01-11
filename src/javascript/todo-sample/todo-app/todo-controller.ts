@@ -48,7 +48,6 @@ class TodoCtrl {
         });
     }
 
-
 }
 
 TodoCtrl.$inject = [
