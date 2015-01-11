@@ -13,8 +13,8 @@ describe 'TodoService', ->
   describe '#getTodos', ->
     beforeEach ->
       @$httpBackend
-        .expectGET '/api/Todos'
-        .respond [ title: "a" ]
+        .expectGET '/api/todos'
+        .respond content: [ title: "a" ]
     afterEach ->
       @$httpBackend.verifyNoOutstandingExpectation()
       @$httpBackend.verifyNoOutstandingRequest()
@@ -23,12 +23,12 @@ describe 'TodoService', ->
       @todoResource.getTodos().then (todos) ->
         result = todos
       @$httpBackend.flush()
-      assert.equal result[0].title, "a"
+      assert.equal result.content[0].title, "a"
 
   describe '#addTodo', ->
     beforeEach ->
       @$httpBackend
-        .expectPOST '/api/Todos', title: "a"
+        .expectPOST '/api/todos', title: "a"
         .respond()
     afterEach ->
       @$httpBackend.verifyNoOutstandingExpectation()
@@ -40,7 +40,7 @@ describe 'TodoService', ->
   describe '#removeTodo', ->
     beforeEach ->
       @$httpBackend
-        .expectDELETE '/api/Todos/1'
+        .expectDELETE '/api/todos/1'
         .respond()
     afterEach ->
       @$httpBackend.verifyNoOutstandingExpectation()
@@ -51,14 +51,17 @@ describe 'TodoService', ->
 
   describe '#clearCompleted', ->
     beforeEach ->
-      q = '{"id":{"inq":[1]}}'
       @$httpBackend
-        .expectDELETE "/api/Todos?where=#{encodeURI(q)}"
+        .expectDELETE "/api/todos?ids=1&ids=2"
         .respond()
     afterEach ->
       @$httpBackend.verifyNoOutstandingExpectation()
       @$httpBackend.verifyNoOutstandingRequest()
     it 'should clear completed', ->
-      @todoResource.clearCompleted [ id: 1, title: "a" ]
+      @todoResource.clearCompleted [
+        {id: 1, done: true},
+        {id: 2, done: true},
+        {id: 3, done: false},
+      ]
       @$httpBackend.flush()
 
