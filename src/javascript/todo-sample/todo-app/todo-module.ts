@@ -17,12 +17,12 @@ var requires: string[] = [
     "ngResource",
     "ui.bootstrap"
 ];
-var mod: ng.IModule = angular.module("app2.todo-lb-app", requires)
+var mod: ng.IModule = angular.module("todo-app", requires)
     .config(["$routeProvider", ($routeProvider: ng.route.IRouteProvider): ng.route.IRouteProvider => {
         return $routeProvider.when("/", {
             controller: "TodoCtrl",
             controllerAs: "todoCtrl",
-            templateUrl: "todo-lb/index.html"
+            templateUrl: "todo-app/index.html"
         });
     }])
     .controller("TodoCtrl", TodoCtrl)

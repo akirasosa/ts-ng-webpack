@@ -4,8 +4,7 @@ var config = require("./config");
 
 module.exports = {
   entry: {
-    app1: "./build/javascript/app1-entry.js",
-    app2: "./build/javascript/app2-entry.js"
+    "todo-sample": "./build/javascript/todo-sample-entry.js"
   },
   output: {
     path: path.join(__dirname, "dist"),
