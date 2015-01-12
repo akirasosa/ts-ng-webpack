@@ -1,8 +1,8 @@
 # TypeScript + Angular + webpack Boilerplate
 
-Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Todos application is included in it. You can try demo.
-* [demo][demo-url].
-* [demo Spring Boot backed][demo-spring-boot-backed].
+Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Some sample applications are included in it. You can try demo.
+
+* [Todo app backed by Spring Boot][todo-sample].
 
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][gemnasium-image]][gemnasium-url]
@@ -60,9 +60,9 @@ gulp build
 * [Backbone.js Todos](http://backbonejs.org/examples/todos/)
 * [gulp-starter](https://github.com/greypants/gulp-starter)
 
-[demo-url]: http://ts-ng-webpack.5ik.biz/
-[demo-spring-boot-backed]: http://rocky-anchorage-1766.herokuapp.com/
+[todo-sample]: http://rocky-anchorage-1766.herokuapp.com/
 [travis-url]: https://travis-ci.org/akirasosa/ts-ng-webpack
 [travis-image]: https://travis-ci.org/akirasosa/ts-ng-webpack.svg
 [gemnasium-url]: https://gemnasium.com/akirasosa/ts-ng-webpack
 [gemnasium-image]: https://gemnasium.com/akirasosa/ts-ng-webpack.svg
+
