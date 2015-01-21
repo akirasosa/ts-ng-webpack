@@ -4,7 +4,8 @@ var config = require("./config");
 
 module.exports = {
   entry: {
-    "todo-sample": "./build/javascript/todo-sample-entry.js"
+    "todo-sample": "./build/javascript/todo-sample-entry.js",
+    "jwt-sample": "./build/javascript/jwt-sample-entry.js"
   },
   output: {
     path: path.join(__dirname, "dist"),
