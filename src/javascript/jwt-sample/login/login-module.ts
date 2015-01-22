@@ -1,18 +1,20 @@
 import LoginCtrl = require("./login-controller");
+import authModule = require("../components/auth/auth-module");
 
 /* tslint:disable */
 require("./index.html");
 /* tslint:enable */
 
 var requires: string[] = [
-    "ngRoute"
+    "ngRoute",
+    authModule.name
 ];
-var mod: ng.IModule = angular.module("login-app", requires)
+var mod: ng.IModule = angular.module("my-login-app", requires)
     .config(["$routeProvider", ($routeProvider: ng.route.IRouteProvider): ng.route.IRouteProvider => {
         return $routeProvider.when("/login", {
             controller: "LoginCtrl",
             controllerAs: "loginCtrl",
-            templateUrl: "login-app/index.html"
+            templateUrl: "login/index.html"
         });
     }])
     .controller("LoginCtrl", LoginCtrl);

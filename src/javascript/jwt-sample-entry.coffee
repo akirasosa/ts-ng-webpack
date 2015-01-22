@@ -1,8 +1,8 @@
 require '../css/style.css'
 require 'angular'
 require 'angular-route'
-loginAppModule = require './jwt-sample/login-app/login-module'
-secretAppModule = require './jwt-sample/secret-app/secret-module'
+loginAppModule = require './jwt-sample/login/login-module'
+secretAppModule = require './jwt-sample/secret/secret-module'
 
 requires = [
   loginAppModule.name
