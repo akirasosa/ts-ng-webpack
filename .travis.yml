@@ -1,21 +1,21 @@
 language: node_js
 cache:
   directories:
-  - node_modules
-  - bower_components
+    - node_modules
+    - bower_components
 node_js:
-- '0.10'
+  - '0.10'
 before_script:
-- npm install -g bower gulp tsd
-- bower install
-- tsd reinstall
-- gulp compile
+  - npm install -g bower gulp tsd
+  - bower install
+  - tsd reinstall
+  - gulp compile
 env:
   global:
-  - GH_REF: github.com/akirasosa/ts-ng-webpack
-  # GH_TOKEN
-  - secure: MiJVCoGjNtFkvvmtUotqQ1aXrA1IaL9dy6T9aUwIOruoZ+cRz3hZUAUxH6MCHsF4Nh5cI/OXXZOb3ltPFQHANuJzIoy+DonkiHSZq6jRHcz50PXtdS0xnTYb8zeQOk/ORvpgz+dBqBgmjrA1oeRqhesqG2vN5bczRvNisrJ2tJE=
+    - GH_REF: github.com/akirasosa/ts-ng-webpack
+    # GH_TOKEN
+    - secure: MiJVCoGjNtFkvvmtUotqQ1aXrA1IaL9dy6T9aUwIOruoZ+cRz3hZUAUxH6MCHsF4Nh5cI/OXXZOb3ltPFQHANuJzIoy+DonkiHSZq6jRHcz50PXtdS0xnTYb8zeQOk/ORvpgz+dBqBgmjrA1oeRqhesqG2vN5bczRvNisrJ2tJE=
 script:
-- npm test
+  - npm test
 after_success:
-- scripts/push-to-ghpages.sh
+  - test $TRAVIS_BRANCH == "master" && scripts/push-to-ghpages.sh
