@@ -60,7 +60,7 @@ gulp build
 * [Backbone.js Todos](http://backbonejs.org/examples/todos/)
 * [gulp-starter](https://github.com/greypants/gulp-starter)
 
-[todo-sample]: http://rocky-anchorage-1766.herokuapp.com/
+[todo-sample]: https://rocky-anchorage-1766.herokuapp.com/
 [travis-url]: https://travis-ci.org/akirasosa/ts-ng-webpack
 [travis-image]: https://travis-ci.org/akirasosa/ts-ng-webpack.svg
 [gemnasium-url]: https://gemnasium.com/akirasosa/ts-ng-webpack
