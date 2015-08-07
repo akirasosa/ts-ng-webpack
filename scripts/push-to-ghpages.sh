@@ -9,7 +9,6 @@ cd out
 git init
 git config user.name "Travis-CI"
 git config user.email "travis@example.com"
-cp ../CNAME .
 cp ../index.html .
 cp -rf ../dist .
 git add .
