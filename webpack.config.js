@@ -16,7 +16,7 @@ module.exports = {
       { test: /\.css$/, loader: "style!css" },
       { test: /\.jpg$/, loader: "file-loader" },
       { test: /\.png$/, loader: "url-loader?limit=10000" },
-      { test: /\.woff$/, loader: "url-loader?limit=25000&mimetype=application/font-woff" },
+      { test: /\.woff2?$/, loader: "url-loader?limit=25000&mimetype=application/font-woff" },
       { test: /\.ttf$/, loader: "url-loader?limit=50000&mimetype=application/font-ttf" },
       { test: /\.eot$/, loader: "file-loader" },
       { test: /\.svg$/, loader: "file-loader" },

@@ -13,17 +13,17 @@
     "tests"
   ],
   "devDependencies": {
-    "angular-mocks": "~1.3.10"
+    "angular-mocks": "~1.4.3"
   },
   "dependencies": {
-    "angular": "~1.3.10",
-    "angular-route": "~1.3.10",
-    "angular-resource": "~1.3.10",
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-resource": "~1.4.3",
     "lodash": "~3.0.0",
     "bootstrap-stylus": "~4.0.1",
-    "angular-bootstrap": "~0.12.0"
+    "angular-bootstrap": "~0.13.2"
   },
   "resolutions": {
-    "angular": "1.3.10"
+    "angular": "1.4.3"
   }
 }
