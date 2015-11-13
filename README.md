@@ -1,3 +1,5 @@
+# This project was suspended. Alternatively, I have created an [Angular2 version](https://github.com/springboot-angular2-tutorial/angular2-app) which is for more practical use.
+
 # TypeScript + Angular + webpack Boilerplate
 
 Basic setup for TypeScript, Angular, webpack, gulp and Bootstrap. Some sample applications are included in it. You can try demo.
