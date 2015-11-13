@@ -1,13 +1,15 @@
 require '../css/style.css'
 require 'angular'
 require 'angular-route'
-todoAppModule = require './todo-sample/todo/todo-module'
+loginAppModule = require './jwt-sample/login/login-module'
+secretAppModule = require './jwt-sample/secret/secret-module'
 
 requires = [
-  todoAppModule.name
+  loginAppModule.name
+  secretAppModule.name
 ]
 
-angular.module 'todo-sample-entry', requires
+angular.module 'jwt-sample-entry', requires
   .config ['$routeProvider', ($routeProvider) ->
     $routeProvider.otherwise redirectTo: "/"
   ]

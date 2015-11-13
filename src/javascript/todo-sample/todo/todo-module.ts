@@ -22,10 +22,11 @@ var mod: ng.IModule = angular.module("todo-app", requires)
         return $routeProvider.when("/", {
             controller: "TodoCtrl",
             controllerAs: "todoCtrl",
-            templateUrl: "todo-app/index.html"
+            templateUrl: "todo/index.html"
         });
     }])
     .controller("TodoCtrl", TodoCtrl)
-    .service("TodoService", TodoService);
+    .service("TodoService", TodoService)
+    ;
 export = mod;
 
